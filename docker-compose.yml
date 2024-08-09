@@ -1,0 +1,15 @@
+version: '3'
+services:
+  Frontend:
+    image: two-tier-app-frontend
+    ports:
+      - "3001:3000"
+    restart: on-failure
+  Backend:
+    image: two-tier-app-backend
+    ports:
+      - "8080:8080"
+    restart: on-failure
+networks:
+  my-network:
+    driver: bridge
